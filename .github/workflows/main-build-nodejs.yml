@@ -50,6 +50,8 @@ jobs:
       - name: Build layer Zip
         run: GOARCH=${{ matrix.architecture }} ./build.sh ${{ matrix.architecture }}
         working-directory: nodejs
+      - name: find all zip hashFiles
+        rub: find . -type f -name '*.zip'
       - name: Get Lambda Layer amd64 architecture value
         if: ${{ matrix.architecture == 'amd64' }}
         run: echo LAMBDA_FUNCTION_ARCH=x86_64 | tee --append $GITHUB_ENV
