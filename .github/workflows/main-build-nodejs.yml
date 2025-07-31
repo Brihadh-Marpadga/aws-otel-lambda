@@ -62,4 +62,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: nodejs-layer-${{matrix.runtime}}-${{matrix.architecture }}
-          path: nodejs/layer/${{ matrix.architecture }}/*.zip
+          path: |
+            ./opentelemetry-lambda/**/*.zip
