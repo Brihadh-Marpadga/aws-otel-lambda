@@ -44,8 +44,8 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package.json') }}-go-${{ hashFiles('**/go.sum') }}
           restore-keys: |
             ${{ runner.os }}-node-
-      - name: Patch ADOT
-        run: ./patch-upstream.sh
+      #- name: Patch ADOT
+      #  run: ./patch-upstream.sh
      
       - name: Build layer Zip
         run: GOARCH=${{ matrix.architecture }} ./build.sh ${{ matrix.architecture }}
